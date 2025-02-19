@@ -65,7 +65,7 @@ Dc-1's Private ip address is subject to change at the moment because it's IP add
 <img src="https://i.imgur.com/I45Dnvl.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From here click on ipconfig1 and under private ip address settings set the allocation from Dynamic to Static. This way the priavte IP address will not change and will stay the same making it far easier to log into the domain every time.
+From here click on ipconfig1 and under private ip address settings set the allocation from Dynamic to Static. This way the private IP address will not change and will stay the same making it far easier to log into the domain every time.
 </p>
 <br />
 
@@ -129,7 +129,7 @@ Now go into the DNS servers tab and click on the custom option, from here just p
 <img src="https://i.imgur.com/ZJDbMoX.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go back to the Virtual Machines menu and click on Client-1's box and hit restart, this is to make sure that the new settings are applied. ping <DC-1's private IP adderss> and the following should pop up
+Now go back to the Virtual Machines menu and click on Client-1's box and hit restart, this is to make sure that the new settings are applied. 
 </p>
 <br />
 
@@ -137,16 +137,104 @@ Now go back to the Virtual Machines menu and click on Client-1's box and hit res
 <img src="https://i.imgur.com/PcSfIS6.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log into Client-1's virtual machine and open up powershell, from there your going to want to copy DC-1's private ip address and ping it inside of powershell. Type in
+Now log into Client-1's virtual machine and open up powershell, from there your going to want to copy DC-1's private ip address and ping it inside of powershell. Type in ping (DC-1's private IP adderss) and the following should pop up
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/mvs0RON.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/mvs0RON.png" height="150%" width="150%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Now type in the following "ipconfig /all" and the following sequence should occur. If you check the DNS Servers section it should be the same as Dc-1's private ip address. 
   Congratulations you have now connected Client-1 to DC-1's Server! Now onto the next step.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/AsLC4Ff.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now log back into DC-1 and within the server manager screen click on "Add roles and features" go down to server roles and activate "Active Directory Domain Services"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/KDTPFjB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Continue clicking next until you see the following box, make sure to check the box and hit install.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/msbztfl.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Within server manager click on the flag on the right right hand corner, click on "Promote this server to a domain controller"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/BrqRG3n.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+The following window should pop up. Fill in the "Add a new forest" box and make the root domain name "mydomain.com"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/vnBLxeB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+On the next tab chances are you may never need this but for the sake of this lesson put a memorable password and hit next.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Hh8QFaI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now continue to this tab and hit install, your virtual macine should automatically reset itself.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/ubfo4HD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+When attempting to log back into DC-1 be sure to put "mydomain.com\" then YOUR username this is important since we are now logging back into DC-1 now that it is an offical Domain. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
 
