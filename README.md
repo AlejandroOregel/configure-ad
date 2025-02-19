@@ -126,6 +126,39 @@ Now go into the DNS servers tab and click on the custom option, from here just p
 <br />
 
 <p>
+<img src="https://i.imgur.com/ZJDbMoX.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now go back to the Virtual Machines menu and click on Client-1's box and hit restart, this is to make sure that the new settings are applied. ping <DC-1's private IP adderss> and the following should pop up
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/PcSfIS6.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now log into Client-1's virtual machine and open up powershell, from there your going to want to copy DC-1's private ip address and ping it inside of powershell. Type in
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/mvs0RON.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now type in the following "ipconfig /all" and the following sequence should occur. If you check the DNS Servers section it should be the same as Dc-1's private ip address. 
+  Congratulations you have now connected Client-1 to DC-1's Server! Now onto the next step.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
+
+<p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
