@@ -183,7 +183,7 @@ The following window should pop up. Fill in the "Add a new forest" box and make 
 <br />
 
 <p>
-<img src="https://i.imgur.com/vnBLxeB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/vnBLxeB.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 On the next tab chances are you may never need this but for the sake of this lesson put a memorable password and hit next.
@@ -191,7 +191,7 @@ On the next tab chances are you may never need this but for the sake of this les
 <br />
 
 <p>
-<img src="https://i.imgur.com/Hh8QFaI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Hh8QFaI.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 Now continue to this tab and hit install, your virtual macine should automatically reset itself.
@@ -199,13 +199,76 @@ Now continue to this tab and hit install, your virtual macine should automatical
 <br />
 
 <p>
-<img src="https://i.imgur.com/ubfo4HD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ubfo4HD.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 When attempting to log back into DC-1 be sure to put "mydomain.com\" then YOUR username this is important since we are now logging back into DC-1 now that it is an offical Domain. 
 </p>
 <br />
 
+<p>
+<img src="https://i.imgur.com/Ocndybo.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now that you've logged in click on the windows start button, expand "Windows Administrative Tools" and click on "Active Directory Users and Computers"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/pLD3TlD.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+You should be met with the following screen from here right click "mydomain.com" Go to New, go down and click "Orginizational Unit"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/C9V14e2.png" height="150%" width="150%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Name the orginizational unit "_EMPLOYEES" Do NOT mess this part up be sure that your spelling is correct and that you are not missing the underscore.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/PHVfP6i.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Create another orginizational unit following the same process, name this one "_ADMINS" Same rules apply as the last one make sure there are no mistakes when doing this.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/n22cgMw.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we want to create a user within the AD. Go to _ADMINS and right click the empty folder, go to new and click on user. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DmL19jj.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Fill out the following information, feel free to name your user whatever you'd like but make sure there is an underscore afrer their first name, make sure that "admin" is following the underscore. This will be used to log into the Domain as this user.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/VJXK3Nv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now that you created the account in order to fully make this account a true admin 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+<br />
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
