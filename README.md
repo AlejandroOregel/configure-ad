@@ -258,7 +258,70 @@ Fill out the following information, feel free to name your user whatever you'd l
 <img src="https://i.imgur.com/VJXK3Nv.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now that you created the account in order to fully make this account a true admin 
+Now that you created the account in order to fully make this account a true admin you have to add the created account into the domain's security group. Right click the account and go to properties.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/u7RFe49.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+This window should pop up from here go to "Member Of" and click on "Add" type in "Domain Admins" and hit "Check Names" it should add the account as a Domain Admin be sure to hit "Apply" and "Ok"
+</p>
+<br />
+<p>
+<img src="https://i.imgur.com/eNkMtfl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now log out of the account and log back in as the previously created account. After logged into DC-1, log in to Client-1 aswell.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/qkFJfkE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+From Client-1's machine right click the windows start button and go to system from there click on Rename this PC.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/BlPaGNe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+The first window that pops up should be system propereties, click change. Now from the ComputerName/Domain Changes window click on Domain and type in mydomain.com and hit OK.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Eb8VRcK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now type in the information from the previously created account, it should look something like this.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/9MYIeNg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+If you've done everything correctly this window should appear. Your virtual machine should be asking to restart, after this restart your pc should be a member of the domain.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/9EFKZ8V.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now from DC-1 (NOT CLIENT-1) go to start and head over to "Active Directory Users and Computers"
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/084Mq6I.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now to confirm that Client-1 was successfully added to the domain, expand "mydomain.com" and click on "computers" you should see client-1 within the computers tab.
 </p>
 <br />
 
@@ -269,13 +332,6 @@ Now that you created the account in order to fully make this account a true admi
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -325,10 +381,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
