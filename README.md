@@ -273,7 +273,7 @@ This window should pop up from here go to "Member Of" and click on "Add" type in
 <img src="https://i.imgur.com/eNkMtfl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log out of the account and log back in as the previously created account. After logged into DC-1, log in to Client-1 aswell.
+Now log out of the account and log back in as the previously created account. After you've logged into DC-1, log in to Client-1 aswell.
 </p>
 <br />
 
@@ -281,7 +281,7 @@ Now log out of the account and log back in as the previously created account. Af
 <img src="https://i.imgur.com/qkFJfkE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From Client-1's machine right click the windows start button and go to system from there click on Rename this PC.
+From Client-1's machine right click the windows start button and go to system, from there click on Rename this PC.
 </p>
 <br />
 
@@ -289,7 +289,7 @@ From Client-1's machine right click the windows start button and go to system fr
 <img src="https://i.imgur.com/BlPaGNe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The first window that pops up should be system propereties, click change. Now from the ComputerName/Domain Changes window click on Domain and type in mydomain.com and hit OK.
+The first window that pops up should be system propereties, click change. Now from the ComputerName/DomainChanges window click on Domain and type in mydomain.com and hit OK.
 </p>
 <br />
 
@@ -305,7 +305,7 @@ Now type in the information from the previously created account, it should look 
 <img src="https://i.imgur.com/9MYIeNg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-If you've done everything correctly this window should appear. Your virtual machine should be asking to restart, after this restart your pc should be a member of the domain.
+If you've done everything correctly this window should appear. Your virtual machine should be asking to restart, after this restart Client-1 should be a member of the domain.
 </p>
 <br />
 
