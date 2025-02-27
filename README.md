@@ -326,34 +326,66 @@ Now to confirm that Client-1 was successfully added to the domain, expand "mydom
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ki5UHVZ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Log into Client-1 as the previously created admin account and right-click windows start, from there click system and go to remote desktop on the window that pops up.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/lcW3uRY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+From the Remote Desktop window click on "Select users that can remotely access this PC. Click Add on the window that opens up.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/zxpWz02.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Type in Domain Users in the box and click check names, from there click ok and log into DC-1 as the previously created admin account.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/uv32i1e.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+From within DC-1 go to the windows search bar and type "Powershell ISE" right-click and run powershell as an administrator.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/Z2i3FlM.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Go to this link https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 . Hit the copy button and head back over to DC-1 and paste the copied content into powershell. All the following code does is essentially creates a whole lot of different random made up user accounts within the active directory so we can get a better understanding of how it should look inside an actual Domain.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/4FEGY6V.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Once the script has been pasted into the engine hit run script and it should make 1000 random accounts for you to work with. Each and every single created user will automatically have the password: Password1
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/tM4Vk94.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now head over to Active Directory Users and Computers, got to mydomain.com and click on the _EMPLOYEES folder, you should see all of the created users within the folder. From here we can log into one of these users using Client-1's virtual machine so go ahead and choose a random name and log into Client-1. Remember all of the passwords for these accounts are automatically: Password1 .
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/oAkRO05.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+The sign in process should look something like this.
 </p>
 <br />
 
