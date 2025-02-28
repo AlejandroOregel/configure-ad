@@ -23,7 +23,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/3KoaBl6.png" height="150%" width="150%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create a new resource group. Feel free to name it whatever just make sure to remember which resource group your using for Active Directory.
+Create a new resource group. Feel free to name it whatever you like, just make sure to remember which resource group you're using for Active Directory.
 </p>
 <br />
 
@@ -31,7 +31,7 @@ Create a new resource group. Feel free to name it whatever just make sure to rem
 <img src="https://i.imgur.com/Q4spr7m.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create a Virtual Network, make sure that it's within the previously created resource group.
+Create a virtual network and ensure that it is within the previously created resource group.
 </p>
 <br />
 
@@ -39,7 +39,7 @@ Create a Virtual Network, make sure that it's within the previously created reso
 <img src="https://i.imgur.com/L8dwMyZ.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create two Virtual Machines named DC-1 (Domain Controller) and Client-1, make sure that they're both assigned to the previously created Resource Group and Vitrual Network. DC-1's image should be under Windows Server 2022 and Client-1's image should be under Windows 10 Pro.
+Create two virtual machines named DC-1 (Domain Controller) and Client-1. Make sure that they're both assigned to the previously created resource group and virtual network. DC-1's image should be Windows Server 2022, and Client-1's image should be Windows 10 Pro.
 </p>
 <br />
 
@@ -47,7 +47,7 @@ Create two Virtual Machines named DC-1 (Domain Controller) and Client-1, make su
 <img src="https://i.imgur.com/RzkdslB.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Dc-1's Private ip address is subject to change at the moment because it's IP address settings is set to Dynamic not Static, To change this go into Dc-1's network settings and click on dc-1449_z1.
+DC-1's private IP address is subject to change at the moment because its IP address settings are set to Dynamic, not Static. To change this, go into DC-1's network settings and click on dc-1449_z1.
 </p>
 <br />
 
@@ -55,7 +55,7 @@ Dc-1's Private ip address is subject to change at the moment because it's IP add
 <img src="https://i.imgur.com/I45Dnvl.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From here click on ipconfig1 and under private ip address settings set the allocation from Dynamic to Static. This way the private IP address will not change and will stay the same making it far easier to log into the domain every time.
+From here, click on Ipconfig1, and under Private IP address settings, change the allocation from Dynamic to Static. This way, the private IP address will not change and will stay the same, making it far easier to log in to the domain every time.
 </p>
 <br />
 
@@ -63,7 +63,7 @@ From here click on ipconfig1 and under private ip address settings set the alloc
 <img src="https://i.imgur.com/RkaTr1t.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Load up DC-1's Virtual Machine and you should be met with this screen inside the application Server Manager, if you are not met with this screen chances are you missed a step or did something wrong.
+Start DC-1's virtual machine, and you should see this screen inside the Server Manager application. If you do not see this screen, you may have missed a step or made a mistake.
 </p>
 <br />
 
@@ -71,7 +71,7 @@ Load up DC-1's Virtual Machine and you should be met with this screen inside the
 <img src="https://i.imgur.com/yYSeRiR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Right Click on the windows start button from there click on run, a window should pop up type in the command wf.msc
+Right-click on the Windows Start button, then click on Run. A window should pop up. Type in the command wf.msc.
 </p>
 <br />
 
@@ -79,7 +79,7 @@ Right Click on the windows start button from there click on run, a window should
 <img src="https://i.imgur.com/bTs96U5.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-You should be met with this screen, click on Windows Defender Firewall Properties.
+You should see this screen, then click on Windows Defender Firewall Properties.
 </p>
 <br />
 
@@ -87,7 +87,7 @@ You should be met with this screen, click on Windows Defender Firewall Propertie
 <img src="https://i.imgur.com/jB9a4wW.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-This window should open up. Your going to want to go through each of the following tabs Domain Profile, Private Profile, and Public Profile. Make sure the firewall state is set to off for each tab and apply.
+This window should open up. You're going to want to go through each of the following tabs: Domain Profile, Private Profile, and Public Profile. Make sure the firewall state is set to Off, then click Apply.
 </p>
 <br />
 
@@ -95,7 +95,7 @@ This window should open up. Your going to want to go through each of the followi
 <img src="https://i.imgur.com/phzUxmE.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go back into azure and copy DC-1's private IP address. We're going to need this to change Client-1's connection to DC-1 instead of azure itself.
+Now, go back into Azure and copy DC-1's private IP address. We'll need this to change Client-1's connection to DC-1 instead of Azure itself.
 </p>
 <br />
 
@@ -103,7 +103,7 @@ Now go back into azure and copy DC-1's private IP address. We're going to need t
 <img src="https://i.imgur.com/zXzdRjC.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go into Client-1's network settings and click on the network interface/client01393_z1. 
+Go to Client-1's network settings and click on the network interface client01393_z1.
 </p>
 <br />
 
@@ -111,7 +111,7 @@ Go into Client-1's network settings and click on the network interface/client013
 <img src="https://i.imgur.com/MsQsLVy.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go into the DNS servers tab and click on the custom option, from here just paste the private IP address of DC-1 and click save.
+Now, go to the DNS Servers tab and click the Custom option. From here, paste the private IP address of DC-1 and click Save.
 </p>
 <br />
 
@@ -119,7 +119,7 @@ Now go into the DNS servers tab and click on the custom option, from here just p
 <img src="https://i.imgur.com/ZJDbMoX.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go back to the Virtual Machines menu and click on Client-1's box and hit restart, this is to make sure that the new settings are applied. 
+Now, go back to the Virtual Machines menu, click on Client-1's entry, and click Restart to ensure that the new settings are applied. 
 </p>
 <br />
 
@@ -127,7 +127,7 @@ Now go back to the Virtual Machines menu and click on Client-1's box and hit res
 <img src="https://i.imgur.com/PcSfIS6.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log into Client-1's virtual machine and open up powershell, from there your going to want to copy DC-1's private ip address and ping it inside of powershell. Type in ping (DC-1's private IP adderss) and the following should pop up
+Now, log into Client-1's virtual machine and open up PowerShell. From there, you're going to want to copy DC-1's private IP address and ping it in PowerShell. Type in ping [DC-1's private IP address], and the following output should appear.
 </p>
 <br />
 
@@ -135,8 +135,7 @@ Now log into Client-1's virtual machine and open up powershell, from there your 
 <img src="https://i.imgur.com/mvs0RON.png" height="150%" width="150%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now type in the following "ipconfig /all" and the following sequence should occur. If you check the DNS Servers section it should be the same as Dc-1's private ip address. 
-  Congratulations you have now connected Client-1 to DC-1's Server! Now onto the next step.
+Now, type in the following: ipconfig /all, and the following output should appear. If you check the DNS Servers section, it should match DC-1's private IP address. Congratulations, you have now connected Client-1 to DC-1's server! Now, onto the next step.
 </p>
 <br />
 
@@ -144,7 +143,7 @@ Now type in the following "ipconfig /all" and the following sequence should occu
 <img src="https://i.imgur.com/AsLC4Ff.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log back into DC-1 and within the server manager screen click on "Add roles and features" go down to server roles and activate "Active Directory Domain Services"
+Now, log back into DC-1, and in the Server Manager window, click on Add roles and features. Scroll down to Server Roles and select Active Directory Domain Services.
 </p>
 <br />
 
@@ -152,7 +151,7 @@ Now log back into DC-1 and within the server manager screen click on "Add roles 
 <img src="https://i.imgur.com/KDTPFjB.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Continue clicking next until you see the following box, make sure to check the box and hit install.
+Continue clicking Next until you reach the following screen. Make sure to check the box and click Install.
 </p>
 <br />
 
@@ -160,7 +159,7 @@ Continue clicking next until you see the following box, make sure to check the b
 <img src="https://i.imgur.com/msbztfl.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Within server manager click on the flag on the right right hand corner, click on "Promote this server to a domain controller"
+Within Server Manager, click the flag in the right-hand corner, then click Promote this server to a domain controller.
 </p>
 <br />
 
@@ -168,7 +167,7 @@ Within server manager click on the flag on the right right hand corner, click on
 <img src="https://i.imgur.com/BrqRG3n.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The following window should pop up. Fill in the "Add a new forest" box and make the root domain name "mydomain.com"
+The following window should appear. Select the 'Add a new forest' option and set the root domain name to 'mydomain.com'
 </p>
 <br />
 
@@ -176,7 +175,7 @@ The following window should pop up. Fill in the "Add a new forest" box and make 
 <img src="https://i.imgur.com/vnBLxeB.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-On the next tab chances are you may never need this but for the sake of this lesson put a memorable password and hit next.
+On the next tab, you may never need this, but for the sake of this lesson, enter a memorable password and click Next.
 </p>
 <br />
 
@@ -184,7 +183,8 @@ On the next tab chances are you may never need this but for the sake of this les
 <img src="https://i.imgur.com/Hh8QFaI.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now continue to this tab and hit install, your virtual macine should automatically reset itself.
+Now, continue to the next tab and click Install. Your virtual machine should automatically restart."
+Let me know if you'd like any further refinements!
 </p>
 <br />
 
@@ -192,7 +192,7 @@ Now continue to this tab and hit install, your virtual macine should automatical
 <img src="https://i.imgur.com/ubfo4HD.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-When attempting to log back into DC-1 be sure to put "mydomain.com\" then YOUR username this is important since we are now logging back into DC-1 now that it is an offical Domain. 
+When attempting to log back into DC-1, make sure to enter 'mydomain.com' followed by your username. This is important because we are now logging into DC-1, which is now an official domain. 
 </p>
 <br />
 
@@ -200,7 +200,7 @@ When attempting to log back into DC-1 be sure to put "mydomain.com\" then YOUR u
 <img src="https://i.imgur.com/Ocndybo.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now that you've logged in click on the windows start button, expand "Windows Administrative Tools" and click on "Active Directory Users and Computers"
+Now that you're logged in, click the Windows Start button, expand Windows Administrative Tools, and click Active Directory Users and Computers.
 </p>
 <br />
 
@@ -208,7 +208,7 @@ Now that you've logged in click on the windows start button, expand "Windows Adm
 <img src="https://i.imgur.com/pLD3TlD.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-You should be met with the following screen from here right click "mydomain.com" Go to New, go down and click "Orginizational Unit"
+You should see the following screen. From here, right-click on 'mydomain.com,' go to New, then select Organizational Unit.
 </p>
 <br />
 
@@ -216,7 +216,7 @@ You should be met with the following screen from here right click "mydomain.com"
 <img src="https://i.imgur.com/C9V14e2.png" height="150%" width="150%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Name the orginizational unit "_EMPLOYEES" Do NOT mess this part up be sure that your spelling is correct and that you are not missing the underscore.
+Name the organizational unit '_EMPLOYEES.' Do not mess this up—make sure the spelling is correct and that the underscore is included.
 </p>
 <br />
 
@@ -224,7 +224,7 @@ Name the orginizational unit "_EMPLOYEES" Do NOT mess this part up be sure that 
 <img src="https://i.imgur.com/PHVfP6i.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create another orginizational unit following the same process, name this one "_ADMINS" Same rules apply as the last one make sure there are no mistakes when doing this.
+Create another organizational unit using the same process and name it '_ADMINS.' The same rules apply as before—make sure there are no mistakes when naming it.
 </p>
 <br />
 
@@ -232,7 +232,7 @@ Create another orginizational unit following the same process, name this one "_A
 <img src="https://i.imgur.com/n22cgMw.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now we want to create a user within the AD. Go to _ADMINS and right click the empty folder, go to new and click on user. 
+Go to '_ADMINS' and right-click the empty folder. Go to New, then click User.
 </p>
 <br />
 
@@ -240,7 +240,7 @@ Now we want to create a user within the AD. Go to _ADMINS and right click the em
 <img src="https://i.imgur.com/DmL19jj.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Fill out the following information, feel free to name your user whatever you'd like but make sure there is an underscore afrer their first name, make sure that "admin" is following the underscore. This will be used to log into the Domain as this user.
+Fill out the following fields. Feel free to name your user whatever you'd like, but make sure there is an underscore after their first name and that 'admin' follows the underscore. This username will be used to log into the domain as this user.
 </p>
 <br />
 
@@ -248,7 +248,7 @@ Fill out the following information, feel free to name your user whatever you'd l
 <img src="https://i.imgur.com/VJXK3Nv.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now that you created the account in order to fully make this account a true admin you have to add the created account into the domain's security group. Right click the account and go to properties.
+Now that you've created the account, to fully grant this account admin privileges, you need to add the account to the domain's security group. Right-click the account and select Properties.
 </p>
 <br />
 
@@ -256,14 +256,15 @@ Now that you created the account in order to fully make this account a true admi
 <img src="https://i.imgur.com/u7RFe49.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-This window should pop up from here go to "Member Of" and click on "Add" type in "Domain Admins" and hit "Check Names" it should add the account as a Domain Admin be sure to hit "Apply" and "Ok"
+This window should appear. From here, go to the Member Of tab and click Add. Type in 'Domain Admins' and click Check Names. It should add the account as a Domain Admin. Be sure to click Apply and then OK.
 </p>
 <br />
+
 <p>
 <img src="https://i.imgur.com/eNkMtfl.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log out of the account and log back in as the previously created account. After you've logged into DC-1, log in to Client-1 aswell.
+Now, log out of the current account and log back in using the previously created account. After logging into DC-1, log in to Client-1 as well.
 </p>
 <br />
 
@@ -271,7 +272,7 @@ Now log out of the account and log back in as the previously created account. Af
 <img src="https://i.imgur.com/qkFJfkE.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From Client-1's machine right click the windows start button and go to system, from there click on Rename this PC.
+On Client-1's machine, right-click the Windows Start button and select System. From there, click Rename this PC.
 </p>
 <br />
 
@@ -279,7 +280,7 @@ From Client-1's machine right click the windows start button and go to system, f
 <img src="https://i.imgur.com/BlPaGNe.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The first window that pops up should be system propereties, click change. Now from the ComputerName/DomainChanges window click on Domain and type in mydomain.com and hit OK.
+The first window that pops up should be System Properties. Click Change. Now, in the Computer Name/Domain Changes window, click on Domain, type in 'mydomain.com', and click OK.
 </p>
 <br />
 
@@ -287,7 +288,7 @@ The first window that pops up should be system propereties, click change. Now fr
 <img src="https://i.imgur.com/Eb8VRcK.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now type in the information from the previously created account, it should look something like this.
+Now, enter the information from the previously created account. It should look something like the following.
 </p>
 <br />
 
@@ -295,7 +296,7 @@ Now type in the information from the previously created account, it should look 
 <img src="https://i.imgur.com/9MYIeNg.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-If you've done everything correctly this window should appear. Your virtual machine should be asking to restart, after this restart Client-1 should be a member of the domain.
+If you've done everything correctly, this window should appear. Your virtual machine should prompt you to restart. After the restart, Client-1 should be a member of the domain.
 </p>
 <br />
 
@@ -303,7 +304,7 @@ If you've done everything correctly this window should appear. Your virtual mach
 <img src="https://i.imgur.com/9EFKZ8V.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now from DC-1 (NOT CLIENT-1) go to start and head over to "Active Directory Users and Computers"
+Now, from DC-1 (NOT CLIENT-1), click Start and open Active Directory Users and Computers.
 </p>
 <br />
 
@@ -311,7 +312,7 @@ Now from DC-1 (NOT CLIENT-1) go to start and head over to "Active Directory User
 <img src="https://i.imgur.com/084Mq6I.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now to confirm that Client-1 was successfully added to the domain, expand "mydomain.com" and click on "computers" you should see client-1 within the computers tab.
+Now, to confirm that Client-1 was successfully added to the domain, expand mydomain.com and click on Computers. You should see Client-1 listed under the Computers tab.
 </p>
 <br />
 
@@ -319,7 +320,7 @@ Now to confirm that Client-1 was successfully added to the domain, expand "mydom
 <img src="https://i.imgur.com/ki5UHVZ.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Log into Client-1 as the previously created admin account and right-click windows start, from there click system and go to remote desktop on the window that pops up.
+Log into Client-1 using the previously created admin account, then right-click the Windows Start button. From there, click System, then go to Remote Desktop in the window that appears.
 </p>
 <br />
 
@@ -327,7 +328,7 @@ Log into Client-1 as the previously created admin account and right-click window
 <img src="https://i.imgur.com/lcW3uRY.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From the Remote Desktop window click on "Select users that can remotely access this PC. Click Add on the window that opens up.
+In the Remote Desktop window, click on Select users that can remotely access this PC. Click Add in the window that opens.
 </p>
 <br />
 
@@ -335,7 +336,7 @@ From the Remote Desktop window click on "Select users that can remotely access t
 <img src="https://i.imgur.com/zxpWz02.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Type in Domain Users in the box and click check names, from there click ok and log into DC-1 as the previously created admin account.
+Type in 'Domain Users' in the box and click Check Names. From there, click OK and log into DC-1 using the previously created admin account.
 </p>
 <br />
 
@@ -343,7 +344,7 @@ Type in Domain Users in the box and click check names, from there click ok and l
 <img src="https://i.imgur.com/uv32i1e.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From within DC-1 go to the windows search bar and type "Powershell ISE" right-click and run powershell as an administrator.
+From within DC-1, go to the Windows search bar and type 'PowerShell ISE.' Right-click and select Run as Administrator.
 </p>
 <br />
 
@@ -351,7 +352,7 @@ From within DC-1 go to the windows search bar and type "Powershell ISE" right-cl
 <img src="https://i.imgur.com/Z2i3FlM.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Go to this link https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1 . Hit the copy button and head back over to DC-1 and paste the copied content into powershell. All the following code does is essentially creates a whole lot of different random made up user accounts within the active directory so we can get a better understanding of how it should look inside an actual Domain.
+Go to the following link: https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1. Click the copy button, head back to DC-1, and paste the copied content into PowerShell. All this code does is create a large number of randomly generated user accounts within Active Directory, allowing us to better understand how it should look in an actual domain.
 </p>
 <br />
 
@@ -359,7 +360,7 @@ Go to this link https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names
 <img src="https://i.imgur.com/4FEGY6V.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Once the script has been pasted into the engine hit run script and it should make 1000 random accounts for you to work with. Each and every single created user will automatically have the password: Password1
+Once the script has been pasted into the engine, click Run Script. It should then create 1,000 random accounts for you to work with. Each created user will automatically have the password: Password1.
 </p>
 <br />
 
@@ -367,7 +368,7 @@ Once the script has been pasted into the engine hit run script and it should mak
 <img src="https://i.imgur.com/tM4Vk94.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now head over to Active Directory Users and Computers, got to mydomain.com and click on the _EMPLOYEES folder, you should see all of the created users within the folder. From here we can log into one of these users using Client-1's virtual machine so go ahead and choose a random name and log into Client-1. Remember all of the passwords for these accounts are automatically: Password1 .
+Now, head over to Active Directory Users and Computers, go to mydomain.com, and click on the _EMPLOYEES folder. You should see all the created users within the folder. From here, you can log into one of these users using Client-1's virtual machine. Go ahead and choose a random name and log into Client-1. Remember, all of the passwords for these accounts are automatically Password1
 </p>
 <br />
 
@@ -375,7 +376,7 @@ Now head over to Active Directory Users and Computers, got to mydomain.com and c
 <img src="https://i.imgur.com/oAkRO05.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The sign in process should look something like this. After successfully logging in feel free to sign out.
+The sign-in process should look something like this. After successfully logging in, feel free to sign out.
 </p>
 <br />
 
@@ -383,7 +384,7 @@ The sign in process should look something like this. After successfully logging 
 <img src="https://i.imgur.com/p5QOImb.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go back into DC-1's VM and right click the windows start button and hit run. From there type in "gpmc.msc" and hit run. This should take you to the Group Policy Management page. Within mydomain.com your going to want to look for Group Policy Object and right-click it.
+Now, go back into DC-1's VM, right-click the Windows Start button, and click Run. From there, type in 'gpmc.msc' and click Run. This should take you to the Group Policy Management Console. Within mydomain.com, you will want to look for Group Policy Objects and right-click it.
 </p>
 <br />
 
@@ -391,7 +392,7 @@ Now go back into DC-1's VM and right click the windows start button and hit run.
 <img src="https://i.imgur.com/RrL7aVr.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Click on New and name this policy Account Lockout Policy, this is to ensure that whenever a user fails their log in attempts more then a set number out times their account will be locked out.
+Click on New and name the policy 'Account Lockout Policy.' This policy ensures that whenever a user exceeds a set number of failed login attempts, their account will be locked out.
 </p>
 <br />
 
@@ -399,7 +400,7 @@ Click on New and name this policy Account Lockout Policy, this is to ensure that
 <img src="https://i.imgur.com/pp79yjq.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Click on the new created policy and go to settings from there scroll down and right-click Computer Configuration and click on edit.
+Click on the newly created policy and go to Settings. From there, scroll down, right-click Computer Configuration, and click on Edit.
 </p>
 <br />
 
@@ -407,7 +408,7 @@ Click on the new created policy and go to settings from there scroll down and ri
 <img src="https://i.imgur.com/JElqU65.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-From here your going to want to open the following folders, Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy. 
+From here, you're going to want to open the following folders: Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy.
 </p>
 <br />
 
@@ -415,7 +416,7 @@ From here your going to want to open the following folders, Computer Configurati
 <img src="https://i.imgur.com/E2C1lRP.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Double click Account Lockout Duration and check the "Define this policy setting" box and set the timer to 5 minutes.
+Double-click Account Lockout Duration and check the Define this policy setting box, then set the duration to 5 minutes.
 </p>
 <br />
 
@@ -423,7 +424,7 @@ Double click Account Lockout Duration and check the "Define this policy setting"
 <img src="https://i.imgur.com/vKUp16z.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Next double click on Account lockout threshold and set it to 3 invalid logon attempts.
+Next, double-click on Account Lockout Threshold and set it to 3 invalid login attempts.
 </p>
 <br />
 
@@ -431,7 +432,7 @@ Next double click on Account lockout threshold and set it to 3 invalid logon att
 <img src="https://i.imgur.com/jDnb68U.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now the last policy we're going to edit is the "Reset account lockout counter after" policy, double click and set the timer to 10 minutes. This policy makes sure that after you failed one logon attempt the set 10 minute timer will begin, if you attempt to logon before those 10 minutes are up the it would count as your 2nd logon attempt, if you attempt to logon after those 10 minutes then the counter would reset and it would only count as your first logon attempt.
+The last policy we're going to edit is the Reset account lockout counter after policy. Double-click on it and set the timer to 10 minutes. This policy ensures that after you fail one login attempt, the 10-minute timer begins. If you attempt to log in before those 10 minutes are up, it will count as your second login attempt. If you attempt to log in after those 10 minutes, the counter will reset, and it will count as your first login attempt.
 </p>
 <br />
 
@@ -439,7 +440,7 @@ Now the last policy we're going to edit is the "Reset account lockout counter af
 <img src="https://i.imgur.com/EdywgFV.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now go back into the Group Policy Management section and right-click mydomain.com and click on "Link an Existing GPO"
+Now, go back to the Group Policy Management Console. Right-click mydomain.com and click on Link an Existing GPO.
 </p>
 <br />
 
@@ -447,7 +448,7 @@ Now go back into the Group Policy Management section and right-click mydomain.co
 <img src="https://i.imgur.com/CzQL5cg.png" height="200%" width="200%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-This window should appear your going to want to click on the previoously created policy "Account Lockout Policy" and hit OK. The policy should automatically update overtime. We have officially configured Active Directory and the polcies that come with it Congratulations!
+This window should appear. You're going to want to click on the previously created policy Account Lockout Policy and click OK. The policy should automatically update over time. We have officially configured Active Directory and the policies that come with it. Congratulations!
 </p>
 <br />
 
